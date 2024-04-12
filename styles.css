@@ -1,0 +1,245 @@
+#pag-3 {
+  transform: translateY(-50%) translateX(-50%);
+} 
+
+#pag-2 {
+  transform: translateY(-52%) translateX(-50%);
+}
+
+#pag-1 {
+  transform: translateY(-54%) translateX(-50%);
+}
+
+#pag-0 {
+  transform: translateY(-56%) translateX(-50%);
+} 
+  
+  
+/* Establece el tamaño del contenedor de la imagen a 400x400 píxeles */
+.control {
+  display: flex;
+  flex-direction: column;
+}
+
+.image-container-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+#imageContainer {
+  width:200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  /* border: 2px solid black; */
+  border-radius: 16px;
+}
+
+#image {
+  object-fit: cover; /* Asegura que la imagen cubra completamente el área sin distorsionarse */
+}
+
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+body {
+  font-family: Montserrat, sans-serif;
+  overflow: hidden;
+}
+
+  .glass {
+background: rgba(0,0,0, 0.15);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(255, 255, 255, 0.1);
+backdrop-filter: blur(11.9px);
+-webkit-backdrop-filter: blur(11.9px);
+
+border-radius: 40px;
+background: url(<path-to-image>) lightgray 0% 0% / 154.22531366348267px 154.22531366348267px repeat, radial-gradient(151.92% 127.02% at 15.32% 21.04%, rgba(165, 239, 255, 0.20) 0%, rgba(110, 191, 244, 0.04) 77.08%, rgba(70, 144, 212, 0.00) 100%);
+background-blend-mode: overlay, normal;
+backdrop-filter: blur(40px);
+  }
+
+  .card {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    top: 50vh;
+    left: 50vw;
+    transform: translateX(-50%) translateY(-50%);
+    width: 600px;
+    height: 400px;
+    gap: 24px;
+    transition: 1s;
+    padding: 100px 0;
+  }
+
+  .title-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    padding: 0 10%;
+    justify-content: left;
+    align-items: baseline;
+  }
+
+  .title {
+    font-weight: 500;
+    font-size: 18px;
+    color: white;
+  }
+
+  .subtitle {
+    font-weight: 300;
+    font-size: 16px;
+    color: white;
+  }
+
+  .card-counter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Montserrat, sans-serif;
+    gap: 8px;
+  }
+
+  .card-number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #bff4cb;
+    border-radius: 8px;
+    transition: 0.4s;
+    color: #bff4cb;;
+  }
+
+  .card-label {
+    color: #bff4cb;
+  }
+
+  .number-active {
+    background: var(--Primary-Green-300, #bff4cb);
+    color: black;
+  }
+
+.arrow {
+    cursor: pointer;
+}
+
+  .world-selector {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.world-background {
+    height:240px;
+    width: 240px;
+    background-color: white;
+    border-radius: 8px;
+}
+
+.continue-button {
+    padding: 8px 24px;
+    background: var(--Primary-Green-300, #A8F0B8);
+    color: black;
+    border-radius: 100px;
+
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* IE 10+ y Edge */
+    user-select: none;         /* Standard syntax */
+}
+
+.continue-button:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+/* PAGE 1 */
+
+.world-selector {
+  display: flex;
+  align-items: center;
+}
+
+.world-background {
+  width: 200px;  /* Ajusta según el tamaño deseado */
+  height: 200px; /* Ajusta según el tamaño deseado */
+  overflow: hidden;
+
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none;    /* Firefox */
+  -ms-user-select: none;     /* IE 10+ y Edge */
+  user-select: none;         /* Standard syntax */
+}
+
+.world-image {
+  width: 100%;
+  height: auto;
+  transition: opacity 0.5s ease;
+}
+
+
+/* Cropper */
+
+/* Aplica estilos para hacer que el área de recorte sea circular */
+/* Aplica estilos para hacer que el área de recorte sea circular */
+.cropper-view-box,
+.cropper-crop-box {
+  border-radius: 50%; /* Esto garantiza que el aspecto sea totalmente redondo */
+}
+
+
+/* Preview */
+
+#imagePreviewContainer {
+  position: relative;
+  width: 200px; /* Ajusta al tamaño de la imagen */
+  height: 200px; /* Ajusta al tamaño de la imagen */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.preview-background, .preview-foreground {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%; /* Si deseas bordes redondos */
+  /* Añade estilos adicionales como color de fondo, bordes, sombras, etc. */
+}
+
+.preview-background {
+    z-index: 0;
+}
+
+#preview {
+  /* display: none !important; */
+  position: relative;
+  width: 100px; 
+  height: 100px;
+  z-index: 1;
+  border-radius: 100%;
+}
+
+.preview-foreground {
+  background-color: rgba(0, 0, 0, 1); /* Ejemplo de capa frontal semitransparente */
+  z-index: 2;
+}
+
+.preview-foreground, .preview-background {
+  pointer-events: none;
+}

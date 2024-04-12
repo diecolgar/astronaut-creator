@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Recortador de Imagen Fijo con Cropper.js</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css">
+<link rel="stylesheet" href="/styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body style="margin: 0; ">
+
+<div style="display: flex; flex-direction: column; position: relative; display: flex; justify-content: center;
+align-items: center; height: 100vh; background-image: url('assets/bg_video_static_3.png'); background-size: cover;">
+
+<div id="background-video" style="z-index: -1; position: fixed; /* O puedes usar absolute, dependiendo de la estructura de tu página */
+top: 50%;
+left: 50%;
+min-width: 100vw;
+min-height: 100vh;
+width: auto;
+height: auto;
+transform: translate(-50%, -50%);
+z-index: -1;">
+  <video autoplay loop muted controls>
+    <source src="assets/bg_video.mp4" type="video/mp4">
+  </video>
+</div>
+
+<!-- PAGE 1 -->
+
+<div class="title-wrapper" style="position: absolute; top: 8%; display: flex; justify-content: center; flex-direction: column; align-items: center;">
+  <div class="title">Create your NASA-themed image for social media</div>
+  <div class="subtitle">It's not rocket science!</div>
+</div>
+
+<div class="glass card" id="pag-3" style="z-index: 3;">
+
+  <div class="card-counter">
+    <div style="display: flex; gap: 16px;">
+      <div class="card-number number-active">3</div>
+      <div class="card-number">2</div>
+      <div class="card-number">1</div>
+      <div class="card-number">0</div>
+    </div>
+    <div class="card-label">Select your background</div>
+  </div>
+
+  <div class="world-selector">
+    <svg class="arrow left-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M15 18L9 12L15 6" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <div class="world-background">
+      <img src="assets/bg_world_1.png" class="world-image" alt="World Image">
+    </div>
+    <svg class="arrow right-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M9 18L15 12L9 6" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+</div>
+
+
+  <div class="continue-button" id="continue-pag-3">
+      Continue
+  </div>
+
+</div>
+
+
+<!-- PAGE 2 -->
+
+<div class="glass card" id="pag-2" style="z-index: 2;">
+
+  <div class="card-counter">
+    <div style="display: flex; gap: 16px;">
+      <div class="card-number">3</div>
+      <div class="card-number number-active">2</div>
+      <div class="card-number">1</div>
+      <div class="card-number">0</div>
+    </div>
+    <div class="card-label" >Upload a selfie</div>
+  </div>
+  
+
+  <input type="file" id="inputImage" accept="image/*">
+
+  <!-- Div para mostrar y controlar la imagen cargada -->
+  <div id="imagePreview" style="width: 200px; height: 200px; overflow: hidden; display: none;">
+    <img id="previewImage" src="" alt="Image Preview" style="width: 100%; height: auto;">
+  </div>
+
+  <!-- Botón para borrar la imagen cargada -->
+  <button id="deleteImageButton" style="display: none;">Erase image</button>
+
+  <div class="continue-button" id="continue-pag-2">
+    Continue
+  </div>
+</div>
+
+
+
+<!-- PAGE 3 -->
+
+<div class="glass card" id="pag-1" style="z-index: 1;">
+
+  <div class="card-counter">
+    <div style="display: flex; gap: 16px;">
+      <div class="card-number">3</div>
+      <div class="card-number">2</div>
+      <div class="card-number number-active">1</div>
+      <div class="card-number">0</div>
+    </div>
+    <div class="card-label">Adjust your picture</div>
+  </div>
+
+<div class="image-container-wrapper">
+    <div id="imageContainer">
+    <img id="image">
+  </div>
+  
+    <div>
+      <div class="control">
+        <label for="zoomRange">Zoom:</label>
+        <input type="range" id="zoomRange" min="0.1" max="3" step="0.1" value="1">
+      </div>
+      <div class="control">
+        <label for="rotateRange">Rotate:</label>
+        <input type="range" id="rotateRange" min="-180" max="180" step="1" value="0">
+      </div>
+    </div>
+
+    <div class="preview-wrapper"  style="width: 200px; height: 200px; position: relative; border-radius: 16px;">
+      <img id="preview" style="position: absolute; top: 50px; left: 50px;"> <!-- Imagen recortada -->
+      <div class="preview-overlay" style="width: 100%; transform-origin: top left; height: 100%; position: absolute; z-index: 10;">
+        <img src="assets/astronaut.png" style="width: 100%; height: 100%;" alt="">
+      </div>
+    </div>
+
+
+
+</div>
+
+
+
+<div class="continue-button" id="continue-pag-1">
+  Continue
+</div>
+
+</div>
+
+<!-- PAGE 4 -->
+
+<div class="glass card" id="pag-0" style="z-index: 0;">
+
+  <div class="card-counter">
+    <div style="display: flex; gap: 16px;">
+      <div class="card-number">3</div>
+      <div class="card-number">2</div>
+      <div class="card-number">1</div>
+      <div class="card-number number-active">0</div>
+    </div>
+    <div class="card-label">Done!</div>
+  </div>
+
+  <div id="imagePreviewContainer">
+    <div class="preview-background"> <!-- Capa trasera -->
+      <canvas id="canvas" style="max-width: 100%; max-height: 100%;"></canvas><br>
+    </div>
+  </div>
+
+  <a id="canvasDownload continue-pag-0" class="continue-button" href="#" download="image.png">Download Image</a>
+
+
+</div>
+
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/downloadjs/1.4.8/download.min.js"></script>
+<script src="/scriptImages.js"></script>
+</body>
+</html>
