@@ -285,7 +285,7 @@ document.getElementById('continue-pag-3').addEventListener('click', function () 
 var rocketGif = document.querySelector('.rocketgif')
 
 canvasDownload.addEventListener('click', () => {
-  rocketGif.style.transform = 'translateY(-70vh)'
+  rocketGif.style.transform = 'translateY(0)'
 })
 
 //#endregion
