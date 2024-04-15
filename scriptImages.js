@@ -278,3 +278,14 @@ document.getElementById('continue-pag-3').addEventListener('click', function () 
 
 
 //#endregion
+
+
+//#region Last Slide 
+
+var rocketGif = document.querySelector('.rocketgif')
+
+canvasDownload.addEventListener('click', () => {
+  rocketGif.style.transform = 'translateY(-70vh)'
+})
+
+//#endregion
