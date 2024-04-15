@@ -236,7 +236,7 @@ createCanvas = (croppedImageSrc) => {
 
   // Función para dibujar la imagen del astronauta.
   function drawAstronaut() {
-    image3.src = 'assets/astronaut.png'; // Asegúrate de que la ruta es correcta
+    image3.src = 'assets/astronaut_new.png'; // Asegúrate de que la ruta es correcta
     image3.onload = function() {
       // Posiciona el astronauta en el centro del canvas, ajusta como necesites.
       let x = (canvas.width - image3.width) / 2;
