@@ -1,3 +1,39 @@
+@font-face {
+  font-family: 'BCGHenSansRegular';
+  src: url('../fonts/BCGHenSansRegular.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'BCGHenSansLight';
+  src: url('../fonts/BCGHenSansLight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'BCGHenSansThin';
+  src: url('../fonts/BCGHenSansThin.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'BCGHenSansBold';
+  src: url('../fonts/BCGHenSansBold.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'BCGHenSerifItalic';
+  src: url('../fonts/BCGHenSerifItalic.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+
 #pag-3 {
   transform: translateY(-40%) translateX(-50%);
 } 
@@ -115,7 +151,7 @@ img {
 }
 
 body {
-  font-family: Montserrat, sans-serif;
+  font-family: BCGHenSansRegular, sans-serif;
   overflow: hidden;
 }
 
@@ -176,7 +212,7 @@ backdrop-filter: blur(40px);
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family: Montserrat, sans-serif;
+    font-family: BCGHenSansRegular, sans-serif;
     gap: 8px;
   }
 
